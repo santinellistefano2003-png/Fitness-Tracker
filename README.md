@@ -14,10 +14,5 @@ Personal fitness tracking dashboard — daily volume, muscle group breakdown, an
 
 ---
 
-## 🚀 Setup
 
-1. Clone the repo
-2. Install dependencies:
-   ```bash
-   pip install pandas matplotlib notion-client
 
