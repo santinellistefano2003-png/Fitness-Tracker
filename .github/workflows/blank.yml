@@ -21,7 +21,7 @@ jobs:
 
 
       - name: Run script
-        run: python Dashboard Workout.ipynb
+        run: python test.py
         env:
           NOTION_TOKEN: ${{ secrets.NOTION }}
           Exce: ${{ secrets.Exce }}
