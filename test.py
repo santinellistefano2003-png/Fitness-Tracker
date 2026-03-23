@@ -122,8 +122,8 @@ calendar_df['week'] = ((calendar_df['Date'] - pd.Timestamp('2026-01-01')).dt.day
 calendar_df['weekday'] = calendar_df['Date'].dt.weekday
 
 fig, ax = plt.subplots(figsize=(20, 3.8))
-fig.patch.set_facecolor('#0d1117')
-ax.set_facecolor('#0d1117')
+fig.patch.set_facecolor('#191919')
+ax.set_facecolor('#191919')
 
 max_val = calendar_df['volume'].max()
 cmap = plt.cm.PuBuGn
@@ -182,7 +182,7 @@ for month_num, month_name in enumerate(months, start=1):
 
 ax.set_title("Volume giornaliero 2026", color='white', pad=10, fontsize=13, fontweight='bold')
 plt.tight_layout()
-plt.savefig('assets/volume_giornaliero.svg', bbox_inches='tight', facecolor='#0d1117')
+plt.savefig('assets/volume_giornaliero.svg', bbox_inches='tight', facecolor='#191919')
 muscle_to_group = {
     # Schiena
     'Dorsali': 'Schiena',
@@ -236,8 +236,8 @@ pivot_pct = pivot.div(pivot.sum(axis=1), axis=0) * 100
 base_color = "#0a8af3"  # arancione, cambia a piacere
 
 fig, ax = plt.subplots(figsize=(16, 6))
-fig.patch.set_facecolor('#0d1117')
-ax.set_facecolor('#0d1117')
+fig.patch.set_facecolor('#191919')
+ax.set_facecolor('#191919')
 
 bottom = pd.Series([0.0] * len(pivot), index=pivot.index)
 # Calcola il max numero di sezioni tra tutte le colonne
@@ -263,7 +263,7 @@ for group_idx, group in enumerate(pivot.index):
         ax.bar(group_idx, val, bottom=b, color=color, width=0.6)
         
         if pct > 5:
-            text_color = 'white' if lightness < 0.45 else '#0d1117'
+            text_color = 'white' if lightness < 0.45 else '#191919'
             ax.text(group_idx, b + val / 2, f'{muscle}\n{pct:.0f}%',
                     ha='center', va='center', fontsize=7.5,
                     color=text_color, fontweight='bold')
@@ -282,7 +282,7 @@ for spine in ax.spines.values():
     spine.set_edgecolor('#30363d')
 
 plt.tight_layout()
-plt.savefig('assets/volume_muscle_group.svg', bbox_inches='tight', facecolor='#0d1117')
+plt.savefig('assets/volume_muscle_group.svg', bbox_inches='tight', facecolor='#191919')
 # Filtra null e raggruppa per Split
 df_type = df[df['Split'].notna()].copy()
 vol_type = df_type.groupby('Split')['Volume'].sum()
@@ -295,8 +295,8 @@ colors = [
 ]
 
 fig, ax = plt.subplots(figsize=(4, 4))
-fig.patch.set_facecolor('#0d1117')
-ax.set_facecolor('#0d1117')
+fig.patch.set_facecolor('#191919')
+ax.set_facecolor('#191919')
 
 wedges, texts, autotexts = ax.pie(
     vol_type,
@@ -318,6 +318,6 @@ for at in autotexts:
 
 ax.set_title('Volume per Type', color='white', fontsize=13, fontweight='bold')
 
-plt.savefig('assets/volume_per_type.svg', bbox_inches='tight', facecolor='#0d1117')
+plt.savefig('assets/volume_per_type.svg', bbox_inches='tight', facecolor='#191919')
 
 
