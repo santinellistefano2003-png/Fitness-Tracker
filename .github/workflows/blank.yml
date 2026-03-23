@@ -23,9 +23,10 @@ jobs:
       - name: Run script
         run: python Dashboard Workout.ipynb
         env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-
+          NOTION_TOKEN: ${{ secrets.NOTION }}
+          Exce: ${{ secrets.Exce }}
+          Wei: ${{ secrets.Wei }}
+          Musc: ${{ secrets.Musc }}
       - name: Commit and push charts
         run: |
           git config user.name "github-actions"
