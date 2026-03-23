@@ -12,7 +12,6 @@ Personal fitness tracking dashboard — daily volume, muscle group breakdown, an
 ### Volume per Muscle Group
 ![Volume per Muscle Group](assets/volume_muscle_group.svg)
 
+### Volume per tipologia Split
+![Volume per Split](assets/volume_per_type.svg)
 ---
-
-
-
