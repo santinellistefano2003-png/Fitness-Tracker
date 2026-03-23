@@ -2,7 +2,8 @@ name: Update Charts
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # ogni 12 ore (00:00 e 12:00 UTC)
+    - cron: '0 * * * *'  # ogni ora
+  # ogni 12 ore (00:00 e 12:00 UTC)
   workflow_dispatch:       # eseguibile anche manualmente
 
 jobs:
