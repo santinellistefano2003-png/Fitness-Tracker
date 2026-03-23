@@ -1,0 +1,36 @@
+name: Update Charts
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # ogni 12 ore (00:00 e 12:00 UTC)
+  workflow_dispatch:       # eseguibile anche manualmente
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pandas matplotlib notion-client python-dotenv requests seaborn
+
+
+      - name: Run script
+        run: python Dashboard Workout.ipynb
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+      - name: Commit and push charts
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add assets/
+          git diff --cached --quiet || git commit -m "chore: update charts"
+          git push
+
