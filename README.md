@@ -1,6 +1,6 @@
 # 🏋️ Fitness Tracker
 
-Personal fitness tracking dashboard — daily volume, muscle group breakdown, and training trends pulled from Notion via API and auto-updated daily.
+Personal fitness tracking dashboard — daily volume, muscle group breakdown, and training trends pulled from Notion via API and auto-updated hourly.
 
 ---
 
