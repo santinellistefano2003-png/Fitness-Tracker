@@ -81,6 +81,9 @@ if 'Date1' in df.columns:
 #eliminazione [] dalla colonna Exercise
 if 'Exercise' in df.columns:
     df['Exercise'] = df['Exercise'].apply(lambda x: x[0] if isinstance(x, list) and len(x) > 0 else x)
+if 'Date' in df.columns:
+    df['Date'] = df['Date'].apply(lambda x: x.split('T')[0] if isinstance(x, str) else x)
+    
 weight['Date'] = pd.to_datetime(weight['Date'])
 df['Date'] = pd.to_datetime(df['Date'])
 
