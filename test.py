@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import matplotlib.patches as mpatches
 from datetime import datetime
-
+import matplotlib
+matplotlib.use('Agg')  # ← backend non interattivo, necessario su server
 # ── URLs grafici ──────────────────────────────────────────────────────────────
 pie     = "https://raw.githubusercontent.com/santinellistefano2003-png/Fitness-Tracker/refs/heads/main/assets/volume_per_type.svg"
 heatmap = "https://raw.githubusercontent.com/santinellistefano2003-png/Fitness-Tracker/refs/heads/main/assets/volume_giornaliero.svg"
